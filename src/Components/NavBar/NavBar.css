@@ -12,20 +12,19 @@ ul {
   justify-content: center;
 }
 
-.logoImage {
-  width: 40px;
-  height: 40px;
-}
-
 .containerImage {
   margin-left: 30px;
 }
 
 .itemNavbar {
   padding: 12px;
-  flex: 0 1 auto;
+  flex: 1 1 auto;
+  background-color: transparent;
+  border-color: transparent;
+  margin-bottom: 5px;
 }
 
 .itemNavbar:hover {
   background-color: aliceblue;
+  border-radius: 5px;
 }

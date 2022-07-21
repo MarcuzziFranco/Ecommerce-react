@@ -2,28 +2,42 @@ import React from "react";
 import "./NavBar.css";
 
 function NavBar() {
+  const handleClick = (e) => {
+    console.log(e.target.value);
+  };
+
   return (
     <div className="containerNavbar">
-      <div className="containerImage">
-        <img
-          alt=""
-          className="logoImage"
-          src="https://cdn-icons-png.flaticon.com/512/6662/6662930.png"
-        />
-      </div>
-
-      <div className="itemNavbar" href="default.asp">
-        Home
-      </div>
-      <div className="itemNavbar" href="news.asp">
-        News
-      </div>
-      <div className="itemNavbar" href="contact.asp">
-        Contact
-      </div>
-      <div className="itemNavbar" href="about.asp">
-        About
-      </div>
+      <input
+        type="button"
+        className="itemNavbar"
+        onClick={handleClick}
+        value="Home"
+      />
+      <input
+        type="button"
+        className="itemNavbar"
+        onClick={handleClick}
+        value="Product"
+      />
+      <input
+        type="button"
+        className="itemNavbar"
+        onClick={handleClick}
+        value="Offers"
+      />
+      <input
+        type="button"
+        className="itemNavbar"
+        onClick={handleClick}
+        value="About"
+      />
+      <input
+        type="button"
+        className="itemNavbar"
+        onClick={handleClick}
+        value="Contact"
+      />
     </div>
   );
 }

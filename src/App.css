@@ -1,5 +1,16 @@
+.containerTittle {
+  display: flex;
+  background-color: #dddddd;
+  padding-top: 10px;
+}
+
+.logoImage {
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+}
+
 .Tittle {
   margin: 0;
   padding: 10px;
-  background-color: #dddddd;
 }
