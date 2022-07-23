@@ -1,5 +1,6 @@
 import React from "react";
 import "./NavBar.css";
+import CardWidget from "../CartWidget/CardWidget";
 
 function NavBar() {
   const handleClick = (e) => {
@@ -8,6 +9,7 @@ function NavBar() {
 
   return (
     <div className="containerNavbar">
+      <CardWidget />
       <input
         type="button"
         className="itemNavbar"
