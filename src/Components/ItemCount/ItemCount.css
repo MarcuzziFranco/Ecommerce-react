@@ -1,0 +1,31 @@
+.countainer {
+  width: fit-content;
+  height: fit-content;
+  border: 2px solid gray;
+  border-radius: 10px;
+  margin: 10px;
+}
+.container__counter {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  border: 2px solid gray;
+  border-radius: 10px;
+}
+
+.container__counter > input {
+  padding: 5px 10px 5px 10px;
+  width: 25px;
+  height: 25px;
+}
+
+.container__counter > label {
+  padding: 1px 15px 5px 15px;
+}
+
+.button {
+  margin: 0px 0px 10px 15px;
+}
