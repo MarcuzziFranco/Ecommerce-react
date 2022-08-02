@@ -3,10 +3,12 @@ import "./ItemCount.css";
 import { useState } from "react";
 
 export const ItemCount = ({ stock, initial, onAdd }) => {
+  const zero = 0;
+
   const [count, setcount] = useState(initial);
 
   const handleIncrement = () => count < stock && setcount(count + 1);
-  const handleDecrement = () => count > 0 && setcount(count - 1);
+  const handleDecrement = () => count > zero && setcount(count - 1);
 
   return (
     <div className="countainer">
