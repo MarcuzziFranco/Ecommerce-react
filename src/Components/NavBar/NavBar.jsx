@@ -9,6 +9,9 @@ function NavBar() {
 
   return (
     <div className="containerNavbar">
+      <div className="containerTittle">
+        <h2 className="Tittle">Tienda Mock</h2>
+      </div>
       <CardWidget />
       <input
         type="button"

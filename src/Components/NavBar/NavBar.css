@@ -1,8 +1,18 @@
 .containerNavbar {
   background-color: #dddddd;
-  display: flex;
   padding-left: 10px;
 }
+
+.containerTittle {
+  background-color: #dddddd;
+  padding-top: 10px;
+}
+
+.Tittle {
+  margin: 0;
+  padding: 10px;
+}
+
 ul {
   list-style-type: none;
   margin: 0;

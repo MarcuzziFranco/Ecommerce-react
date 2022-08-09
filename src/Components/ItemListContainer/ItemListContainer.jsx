@@ -15,7 +15,7 @@ export const ItemListContainer = (props) => {
 
   useEffect(() => {
     //Simulo llamada al servicio.
-    setInterval(() => {
+    setTimeout(() => {
       setListItem(getListItemService());
     }, 4000);
   }, [listItem]);
