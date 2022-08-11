@@ -1,15 +1,15 @@
-import "./App.css";
-import { ItemDetailContainer } from "./Components/ItemDetailContainer/ItemDetailContainer";
-import { ItemListContainer } from "./Components/ItemListContainer/ItemListContainer";
+import { BrowserRouter } from "react-router-dom";
 import NavBar from "./Components/NavBar/NavBar";
+import { Main } from "./Components/Main/Main";
+import { Footer } from "./Components/Footer/Footer";
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <NavBar />
-      <ItemListContainer greeting="Bienvenido a mi tienda" />
-      <ItemDetailContainer id={2} />
-    </div>
+      <Main />
+      <Footer />
+    </BrowserRouter>
   );
 }
 

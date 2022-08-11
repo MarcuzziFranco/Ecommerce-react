@@ -25,9 +25,9 @@ export const ItemListContainer = (props) => {
       <div className="gretting">
         <h2>{props.greeting}</h2>
       </div>
-      <div>
+      {/* <div>
         <ItemCount stock={5} initial={1} onAdd={handlerAdd} />
-      </div>
+      </div> */}
       <div>
         <ItemList listItem={listItem} />
       </div>
