@@ -1,6 +1,6 @@
 import React from "react";
 import "./Item.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Item = ({ item }) => {
   return (
@@ -16,7 +16,7 @@ export const Item = ({ item }) => {
         <div className="product-price-btn">
           <span>$ {item.price}</span>
 
-          <NavLink to={`detail/${item.id}`}>Buy</NavLink>
+          <Link to={`/detail/${item.id}`}>Buy</Link>
         </div>
       </div>
     </div>

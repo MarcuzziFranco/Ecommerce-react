@@ -11,7 +11,22 @@ export const Main = () => {
         <Routes>
           <Route
             exact
-            path="/"
+            path="/home"
+            element={<ItemListContainer greeting="Bienvenido a mi tienda" />}
+          />
+          <Route
+            exact
+            path="/tecnology/:idCategory"
+            element={<ItemListContainer greeting="Bienvenido a mi tienda" />}
+          />
+          <Route
+            exact
+            path="/costume/:idCategory"
+            element={<ItemListContainer greeting="Bienvenido a mi tienda" />}
+          />
+          <Route
+            exact
+            path="/jewelerys/:idCategory"
             element={<ItemListContainer greeting="Bienvenido a mi tienda" />}
           />
           <Route exact path="/detail/:id" element={<ItemDetailContainer />} />
