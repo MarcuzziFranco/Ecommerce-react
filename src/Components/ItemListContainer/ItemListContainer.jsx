@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { ItemCount } from "../ItemCount/ItemCount";
 import { ItemList } from "../ItemList/ItemList";
 import "./ItemListContainer.css";
-import mockList from "./MOCK/Mock.js";
+import { getProducts } from "../../Services/Product.js";
 
 export const ItemListContainer = (props) => {
-  const handlerAdd = () => console.log("Agrego al carrito");
-
+  console.log("Render listContainer");
+  //const [IsLoading, setIsLoading] = useState(true);
   const [listItem, setListItem] = useState([]);
 
   const getListItemService = () => {
-    return mockList;
+    getProducts().then((listItems) => {
+      setListItem(listItems);
+    });
   };
 
   useEffect(() => {
-    //Simulo llamada al servicio.
-    setTimeout(() => {
-      setListItem(getListItemService());
-    }, 4000);
-  }, [listItem]);
+    getListItemService();
+  }, []);
 
   return (
     <div>

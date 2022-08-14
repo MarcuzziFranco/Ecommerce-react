@@ -7,14 +7,16 @@ import { ItemListContainer } from "../ItemListContainer/ItemListContainer";
 export const Main = () => {
   return (
     <div className="main">
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={<ItemListContainer greeting="Bienvenido a mi tienda" />}
-        />
-        <Route exact path="/detail/:id" element={<ItemDetailContainer />} />
-      </Routes>
+      {
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={<ItemListContainer greeting="Bienvenido a mi tienda" />}
+          />
+          <Route exact path="/detail/:id" element={<ItemDetailContainer />} />
+        </Routes>
+      }
     </div>
   );
 };
