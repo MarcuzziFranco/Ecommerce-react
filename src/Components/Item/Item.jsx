@@ -12,13 +12,12 @@ export const Item = ({ item }) => {
         <div className="product-text">
           <h3>{item.title}</h3>
         </div>
-        {
-          <div className="product-price-btn">
-            <span>$ {item.price}</span>
 
-            <NavLink to={`detail/${item.id}`}>Buy</NavLink>
-          </div>
-        }
+        <div className="product-price-btn">
+          <span>$ {item.price}</span>
+
+          <NavLink to={`detail/${item.id}`}>Buy</NavLink>
+        </div>
       </div>
     </div>
   );
