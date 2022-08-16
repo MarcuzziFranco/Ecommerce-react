@@ -1,12 +1,9 @@
 .navbar {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  background-color: aliceblue;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #dddddd;
 }
 
-.container-one {
+.containerTittle {
+  background-color: #dddddd;
 }
 
 .Tittle {
@@ -14,17 +11,28 @@
   padding: 10px;
 }
 
-.container-two {
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
 }
-.nav-button {
-  margin: 0px;
+
+.containerImage {
+  margin-left: 30px;
 }
-.nav-button > a {
-  font-weight: bold;
-  outline: none;
-  text-decoration: none;
-  text-align: center;
-  color: black;
+
+.itemNavbar {
+  padding: 12px;
+  flex: 1 1 auto;
+  background-color: transparent;
+  border-color: transparent;
+  margin-bottom: 5px;
+}
+
+.itemNavbar:hover {
+  background-color: aliceblue;
+  border-radius: 5px;
 }

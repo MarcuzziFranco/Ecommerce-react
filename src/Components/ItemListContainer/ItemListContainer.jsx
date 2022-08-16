@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { ItemList } from "../ItemList/ItemList";
 import "./ItemListContainer.css";
-import { getProducts, getProducByCategory } from "../../Services/Product.js";
-import { useParams } from "react-router-dom";
+import { getProducts } from "../../Services/Product.js";
 
 export const ItemListContainer = (props) => {
+  console.log("Render listContainer");
   //const [IsLoading, setIsLoading] = useState(true);
   const [listItem, setListItem] = useState([]);
-  const { idCategory } = useParams();
-  console.log(idCategory);
 
   const getListItemService = () => {
     getProducts().then((listItems) => {
@@ -16,20 +14,9 @@ export const ItemListContainer = (props) => {
     });
   };
 
-  const getListItemCategoryService = () => {
-    getProducByCategory(idCategory).then((listItems) => {
-      setListItem(listItems);
-    });
-  };
-
   useEffect(() => {
-    console.log("Render listContainer");
-    if (!idCategory) {
-      getListItemService();
-    } else {
-      getListItemCategoryService();
-    }
-  }, [idCategory]);
+    getListItemService();
+  }, []);
 
   return (
     <div>
