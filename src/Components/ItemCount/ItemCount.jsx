@@ -9,6 +9,9 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
 
   const handleIncrement = () => count < stock && setcount(count + 1);
   const handleDecrement = () => count > zero && setcount(count - 1);
+  const handlerAddCart = () => {
+    onAdd(count);
+  };
 
   return (
     <div className="countainer">
@@ -29,7 +32,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
           onClick={handleIncrement}
         />
       </div>
-      <button className="button" onClick={onAdd}>
+      <button className="button" onClick={handlerAddCart}>
         Agregar al Carrito
       </button>
     </div>
