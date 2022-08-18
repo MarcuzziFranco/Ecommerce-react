@@ -2,14 +2,14 @@ import React from "react";
 import "./ItemCount.css";
 import { useState } from "react";
 
-export const ItemCount = ({ stock, initial, onAdd }) => {
+export const ItemCount = ({ stock, initial, onAddToCard }) => {
   const zero = 0;
 
   const [count, setcount] = useState(initial);
 
   const handleIncrement = () => count < stock && setcount(count + 1);
   const handleDecrement = () => count > zero && setcount(count - 1);
-  const handlerAddCart = () => onAdd(count);
+  const handlerAddCart = () => count > zero && onAddToCard(count);
 
   return (
     <div className="countainer">

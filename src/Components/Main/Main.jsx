@@ -3,6 +3,7 @@ import "./Main.css";
 import { Routes, Route } from "react-router-dom";
 import { ItemDetailContainer } from "../ItemDetailContainer/ItemDetailContainer";
 import { ItemListContainer } from "../ItemListContainer/ItemListContainer";
+import { Cart } from "../Cart/Cart";
 
 export const Main = () => {
   return (
@@ -15,6 +16,7 @@ export const Main = () => {
             element={<ItemListContainer greeting="Bienvenido a mi tienda" />}
           />
           <Route exact path="/detail/:id" element={<ItemDetailContainer />} />
+          <Route exact path="/cart" element={<Cart />} />
         </Routes>
       }
     </div>
