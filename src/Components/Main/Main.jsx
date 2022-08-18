@@ -12,7 +12,7 @@ export const Main = () => {
         <Routes>
           <Route
             exact
-            path="/home"
+            path="/"
             element={<ItemListContainer greeting="Bienvenido a mi tienda" />}
           />
           <Route
