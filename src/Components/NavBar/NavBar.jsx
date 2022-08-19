@@ -1,6 +1,7 @@
 import React from "react";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
+import CardWidget from "../CartWidget/CardWidget";
 
 function NavBar() {
   return (
@@ -9,6 +10,9 @@ function NavBar() {
         <Link to="/">
           <h2 className="Tittle">Tienda Mock</h2>
         </Link>
+        <div>
+          <CardWidget />
+        </div>
       </div>
       <div className="container-two">
         <div className="nav-button">

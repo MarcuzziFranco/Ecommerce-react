@@ -1,0 +1,12 @@
+.container-cards {
+  display: flex;
+  flex-direction: column;
+}
+
+th {
+  background-color: blueviolet;
+}
+
+td {
+  background-color: beige;
+}
