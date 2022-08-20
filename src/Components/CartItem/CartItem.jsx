@@ -1,5 +1,6 @@
 import React from "react";
 import "./CartItem.css";
+import ButtonX from "../Icons/ButtonX";
 
 export const CartItem = ({ itemCart, evRemoveItem }) => {
   let product = itemCart.product;
@@ -28,9 +29,12 @@ export const CartItem = ({ itemCart, evRemoveItem }) => {
         <div>$ {totalBuy()}</div>
       </div>
       <div className="button-cancel">
-        <button className="icon-X" onClick={removeItem}>
+        {/* <button className="icon-X" onClick={removeItem}>
           X
-        </button>
+        </button> */}
+        <div className="containerButtonSVG">
+          <ButtonX ev={removeItem} />
+        </div>
       </div>
     </div>
   );
