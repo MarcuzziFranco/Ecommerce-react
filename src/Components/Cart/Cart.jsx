@@ -4,28 +4,19 @@ import { useCartContext } from "../../Context/CartContext";
 import { CartItem } from "../CartItem/CartItem";
 
 export const Cart = () => {
-  const { cartProducts } = useCartContext();
+  const { cartProducts, removeItemCart, quantityproducts } = useCartContext();
 
   return (
-    <div className="container-cards">
-      {/* <table>
-        <tr>
-          <th> Nombre</th>
-          <th> Precio</th>
-          <th> Cantidad</th>
-        </tr>
-        {cartProducts.map((item) => {
-          return (
-            <tr>
-              <td>{item.product.title}</td>
-              <td>{item.product.price}</td>
-              <td>{item.quantity}</td>
-            </tr>
-          );
-        })}
-      </table> */}
-      <CartItem />
-      <CartItem />
+    <div className="container-cart">
+      {quantityproducts > 0 ? (
+        <div className="container-cards">
+          {cartProducts.map((item) => {
+            return <CartItem itemCart={item} evRemoveItem={removeItemCart} />;
+          })}
+        </div>
+      ) : (
+        <h2 className="info-cart">No hay productos en el carrito</h2>
+      )}
     </div>
   );
 };

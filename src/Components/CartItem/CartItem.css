@@ -35,3 +35,7 @@
   flex-grow: 1;
   text-align: center;
 }
+
+.icon-X {
+  background-color: tomato;
+}

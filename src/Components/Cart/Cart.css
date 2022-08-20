@@ -1,12 +1,12 @@
+.container-cart {
+}
+
 .container-cards {
   display: flex;
   flex-direction: column;
 }
 
-th {
-  background-color: blueviolet;
-}
-
-td {
-  background-color: beige;
+.info-cart {
+  font-weight: bold;
+  text-align: center;
 }

@@ -7,10 +7,6 @@ export const CartContextProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([]);
   const [quantityproducts, setQuantityProducts] = useState(0);
 
-  const updateQuantyProducts = (amount) => {
-    setQuantityProducts(quantityproducts + amount);
-  };
-
   const addProduct = (product, quantity) => {
     console.log(product);
     let cartProduct = {
@@ -26,8 +22,14 @@ export const CartContextProvider = ({ children }) => {
       let cartProduct = cartProducts.find((item) => item.id === product.Id);
       cartProduct.quantity += quantity;
     }
+    setQuantityProducts(quantityproducts + quantity);
   };
-  const removeItem = (productId) => {};
+
+  const removeItemCart = (itemCart) => {
+    setQuantityProducts(quantityproducts - itemCart.quantity);
+    const newList = cartProducts.filter((item) => item !== itemCart);
+    setCartProducts(newList);
+  };
 
   const clearCart = () => {
     setCartProducts([]);
@@ -44,7 +46,7 @@ export const CartContextProvider = ({ children }) => {
     quantityproducts,
     cartProducts,
     addProduct,
-    updateQuantyProducts,
+    removeItemCart,
   };
 
   return (

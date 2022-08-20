@@ -12,7 +12,7 @@ export const ItemDetail = ({ product }) => {
   const [confirm, setConfirm] = useState(false);
   // const [amount, setAmount] = useState(0);
 
-  const { addProduct, updateQuantyProducts } = useCartContext();
+  const { addProduct } = useCartContext();
 
   //funcion ejecutada por ItemCount.
   const addToCardHandler = (amount) => {
@@ -20,7 +20,6 @@ export const ItemDetail = ({ product }) => {
     setConfirm(true);
     //setAmount(amount);
     addProduct(product, amount);
-    updateQuantyProducts(amount);
   };
 
   return (
