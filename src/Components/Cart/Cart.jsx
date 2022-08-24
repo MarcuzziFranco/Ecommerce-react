@@ -2,6 +2,7 @@ import React from "react";
 import "./Cart.css";
 import { useCartContext } from "../../Context/CartContext";
 import { CartItem } from "../CartItem/CartItem";
+import { Link } from "react-router-dom";
 
 export const Cart = () => {
   const {
@@ -21,7 +22,10 @@ export const Cart = () => {
           })}
         </div>
       ) : (
-        <h2 className="message-cart">No hay productos en el carrito</h2>
+        <div className="message-cart">
+          <h2 className="message-cart">No hay productos en el carrito</h2>
+          <Link to="/">Ir al catalogo</Link>
+        </div>
       )}
       <div className="footer-cart">
         <button className="product-price-btn2" onClick={clearCart}>
