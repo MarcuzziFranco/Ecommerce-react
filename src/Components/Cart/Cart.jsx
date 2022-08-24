@@ -4,7 +4,13 @@ import { useCartContext } from "../../Context/CartContext";
 import { CartItem } from "../CartItem/CartItem";
 
 export const Cart = () => {
-  const { cartProducts, removeItemCart, quantityproducts } = useCartContext();
+  const {
+    cartProducts,
+    removeItemCart,
+    quantityproducts,
+    calculateTotalBuy,
+    clearCart,
+  } = useCartContext();
 
   return (
     <div className="container-cart">
@@ -15,8 +21,14 @@ export const Cart = () => {
           })}
         </div>
       ) : (
-        <h2 className="info-cart">No hay productos en el carrito</h2>
+        <h2 className="message-cart">No hay productos en el carrito</h2>
       )}
+      <div className="footer-cart">
+        <button className="product-price-btn2" onClick={clearCart}>
+          Vaciar carrito
+        </button>
+        <div className="resume-cart">Total carrito $ {calculateTotalBuy()}</div>
+      </div>
     </div>
   );
 };

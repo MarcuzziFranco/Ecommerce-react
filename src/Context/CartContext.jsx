@@ -15,24 +15,33 @@ export const CartContextProvider = ({ children }) => {
     };
 
     if (!isInCart(product)) {
-      console.log("no existe");
       setCartProducts([...cartProducts, cartProduct]);
     } else {
-      console.log("existe");
       let cartProduct = cartProducts.find((item) => item.id === product.Id);
       cartProduct.quantity += quantity;
     }
     setQuantityProducts(quantityproducts + quantity);
+    //calculateTotalBuy();
   };
 
   const removeItemCart = (itemCart) => {
     setQuantityProducts(quantityproducts - itemCart.quantity);
     const newList = cartProducts.filter((item) => item !== itemCart);
     setCartProducts(newList);
+    //calculateTotalBuy();
   };
 
   const clearCart = () => {
     setCartProducts([]);
+    setQuantityProducts(0);
+  };
+
+  const calculateTotalBuy = () => {
+    let total = 0;
+    cartProducts.forEach((item) => {
+      total += item.quantity * item.product.price;
+    });
+    return total.toFixed(2);
   };
 
   const isInCart = (product) => {
@@ -45,8 +54,10 @@ export const CartContextProvider = ({ children }) => {
   const context = {
     quantityproducts,
     cartProducts,
+    calculateTotalBuy,
     addProduct,
     removeItemCart,
+    clearCart,
   };
 
   return (
