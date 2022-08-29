@@ -1,10 +1,30 @@
-/*export const get = async () => {
-  const response = await fetch(`https://fakestoreapi.com/products/`);
-  const data = await response.json();
-  return data;
-};*/
+import { db } from "../firebase";
+import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 
-export const getProducts = () => {
+const COLLECTION_PRODUCT = "products";
+const productCollection = collection(db, COLLECTION_PRODUCT);
+
+export const FgetProducts = () => {
+  const objData = getDocs(productCollection)
+    .then((snapshot) => {
+      return snapshot.docs.map((doc) => {
+        return {
+          ...doc.data(),
+          id: doc.id,
+        };
+      });
+    })
+    .then((data) => {
+      return data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  return objData;
+};
+
+/*export const getProducts = () => {
   const objData = fetch(`https://fakestoreapi.com/products/`)
     .then((response) => {
       return response.json();
@@ -14,7 +34,17 @@ export const getProducts = () => {
     });
 
   return objData;
+};*/
+
+export const FgetById = (id) => {
+  const docRef = doc(db, COLLECTION_PRODUCT, id);
+  const objData = getDoc(docRef).then((doc) => {
+    return { ...doc.data(), id: doc.id };
+  });
+  return objData;
 };
+
+FgetById("5aZNVrgdkvWIhkNs5QDq");
 
 export const getById = (id) => {
   const objData = fetch(`https://fakestoreapi.com/products/${id}`)

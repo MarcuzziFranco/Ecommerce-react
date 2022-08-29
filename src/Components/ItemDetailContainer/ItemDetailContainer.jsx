@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ItemDetail } from "../ItemDetail/ItemDetail.jsx";
 import "./ItemDetailContainer.css";
-import { getById } from "../../Services/Product.js";
+import { FgetById } from "../../Services/Product.js";
 
 export const ItemDetailContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -10,7 +10,7 @@ export const ItemDetailContainer = () => {
   const { id } = useParams();
 
   const callService = () => {
-    getById(id).then((product) => {
+    FgetById(id).then((product) => {
       setProduct(product);
       setIsLoading(false);
     });

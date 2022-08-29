@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { ItemList } from "../ItemList/ItemList";
 import "./ItemListContainer.css";
-import { getProducts, getProducByCategory } from "../../Services/Product.js";
+import { FgetProducts, getProducByCategory } from "../../Services/Product.js";
 import { useParams } from "react-router-dom";
+import { Item } from "../Item/Item";
 
 export const ItemListContainer = (props) => {
   //const [IsLoading, setIsLoading] = useState(true);
@@ -11,7 +12,8 @@ export const ItemListContainer = (props) => {
   console.log(idCategory);
 
   const getListItemService = () => {
-    getProducts().then((listItems) => {
+    FgetProducts().then((listItems) => {
+      console.log(listItems);
       setListItem(listItems);
     });
   };
