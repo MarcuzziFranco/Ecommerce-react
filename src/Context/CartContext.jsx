@@ -8,7 +8,6 @@ export const CartContextProvider = ({ children }) => {
   const [quantityproducts, setQuantityProducts] = useState(0);
 
   const addProduct = (product, quantity) => {
-    console.log(product);
     let cartProduct = {
       product,
       quantity,
@@ -21,14 +20,12 @@ export const CartContextProvider = ({ children }) => {
       cartProduct.quantity += quantity;
     }
     setQuantityProducts(quantityproducts + quantity);
-    //calculateTotalBuy();
   };
 
   const removeItemCart = (itemCart) => {
     setQuantityProducts(quantityproducts - itemCart.quantity);
     const newList = cartProducts.filter((item) => item !== itemCart);
     setCartProducts(newList);
-    //calculateTotalBuy();
   };
 
   const clearCart = () => {
@@ -45,7 +42,6 @@ export const CartContextProvider = ({ children }) => {
   };
 
   const isInCart = (product) => {
-    console.log(cartProducts);
     return (
       cartProducts.find((item) => item.product.id === product.id) !== undefined
     );

@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
 
 export const ItemDetail = ({ product }) => {
-  const stockProduct = 5; //puede setearse desde product si el stock viene como parte del objecto o setearse con otra llamada a la api.
+  const stockProduct = product.stock;
   const initialStock = 0; //valor por defecto , en el primer caso puede ser 0 , pero puede ser posible setear con un valor previo antes seleccionado.
 
   const [confirm, setConfirm] = useState(false);
@@ -16,9 +16,7 @@ export const ItemDetail = ({ product }) => {
 
   //funcion ejecutada por ItemCount.
   const addToCardHandler = (amount) => {
-    console.log(amount);
     setConfirm(true);
-    //setAmount(amount);
     addProduct(product, amount);
   };
 

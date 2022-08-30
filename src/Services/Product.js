@@ -24,18 +24,6 @@ export const FgetProducts = () => {
   return objData;
 };
 
-/*export const getProducts = () => {
-  const objData = fetch(`https://fakestoreapi.com/products/`)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      return data;
-    });
-
-  return objData;
-};*/
-
 export const FgetById = (id) => {
   const docRef = doc(db, COLLECTION_PRODUCT, id);
   const objData = getDoc(docRef).then((doc) => {
@@ -44,30 +32,10 @@ export const FgetById = (id) => {
   return objData;
 };
 
-FgetById("5aZNVrgdkvWIhkNs5QDq");
-
-export const getById = (id) => {
-  const objData = fetch(`https://fakestoreapi.com/products/${id}`)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      return data;
-    });
-  return objData;
-};
-
-export const getProducByCategory = (category) => {
-  const objData = fetch(
-    `https://fakestoreapi.com/products/category/${category}`
-  )
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      console.log(data);
-      return data;
-    });
+export const FgetProductsByCategory = (category) => {
+  const objData = FgetProducts().then((listProduct) => {
+    return listProduct.filter((item) => item.category === category);
+  });
 
   return objData;
 };

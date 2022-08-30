@@ -18,7 +18,13 @@ export const Cart = () => {
       {quantityproducts > 0 ? (
         <div className="container-cards">
           {cartProducts.map((item) => {
-            return <CartItem itemCart={item} evRemoveItem={removeItemCart} />;
+            return (
+              <CartItem
+                itemCart={item}
+                evRemoveItem={removeItemCart}
+                key={item.id}
+              />
+            );
           })}
         </div>
       ) : (
